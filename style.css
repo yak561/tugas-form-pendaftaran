@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logosekolah {
+    width: 122px;
+    height: auto;
+}
+
+.logompk {
+    width: auto;
+    height: auto;
+}
+
+.header-title {
+    text-align: center;
+    flex: 1;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.container input,.container select {
+    width: 75%;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+}
+
+.equation {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    border: none;
+    flex-direction: column;
+}
+
+.equation label {
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.equation input {
+    flex: 1;
+}

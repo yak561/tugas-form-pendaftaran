@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Pengurus MPK</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Internal -->
+</head>
+
+<body>
+    <!-- Header Content -->
+    <div class="header">
+        <img src="logo 12.jpeg" class="logosekolah" alt="Logo Sekolah">
+        <div class="header-title">
+            <h1 class="title">Formulir Pendaftaran Pengurus MPK</h1>
+            <h2 class="title">Periode 2024/2025</h2>
+        </div>
+        <img src="logo mpk.jpeg" class="logompk" alt="Logo MPK">
+    </div>
+
+    <!-- Form Content -->
+    <form>
+    <!--Nama Lengkap-->
+    <div class="container">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" placeholder="Masukkan nama lengkap" required>
+    </div><br>
+
+    <!-- Kelas -->
+    <div class="container">
+        <label for="kelas">Kelas:</label>
+        <input type="text" placeholder="Masukkan kelas" required>
+    </div><br>
+
+    <!-- Asal Sekolah -->
+    <div class="container">
+        <label for="asal_sekolah">Asal Sekolah:</label>
+        <input type="text" placeholder="Masukkan asal sekolah" required>
+    </div><br>
+
+    <!-- Jenis Kelamin -->
+    <div class="container">
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="">Pilih jenis kelamin</option>
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+        </select>
+    </div><br>
+
+    <!-- Tempat, Tanggal Lahir -->
+    <div class="container">
+        <label for="ttl">TTL:</label>
+        <input type="text" placeholder="Masukkan tempat, tanggal lahir" required>
+    </div><br>
+
+    <!-- Umur -->
+    <div class="container">
+        <label for="umur">Umur:</label>
+        <input type="number" placeholder="Masukkan umur" required>
+    </div><br>
+
+    <!-- Agama -->
+    <div class="container">
+        <label for="agama">Agama:</label>
+        <select id="agama" name="agama" required>
+            <option value="">Pilih agama</option>
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+            <option value="katolik">Katolik</option>
+            <option value="hindu">Hindu</option>
+            <option value="buddha">Buddha</option>
+        </select>
+    </div><br>
+
+    <!-- Alamat -->
+    <div class="container">
+        <label for="alamat">Alamat:</label>
+        <input type="text" placeholder="Masukkan alamat lengkap" required>
+    </div><br>
+
+    <!-- Visi -->
+    <div class="container">
+        <label for="visi">Visi:</label>
+        <input type="text" placeholder="Masukkan visi" required>
+    </div><br>
+
+    <!-- Misi -->
+    <div class="container">
+        <label for="misi">Misi:</label>
+        <input type="text" placeholder="Masukkan misi" required>
+    </div><br>
+
+    <!-- Pengalaman Organisasi -->
+    <div class="container">
+        <label for="pengalaman_organisasi">Pengalaman Organisasi:</label>
+        <input type="text" placeholder="Masukkan pengalaman organisasi" required>
+    </div><br>
+
+    <!-- Pengalaman Ekstrakurikuler -->
+    <div class="container">
+        <label for="pengalaman_ekskul">Pengalaman Ekstrakurikuler:</label>
+        <input type="text" placeholder="Masukkan pengalaman ekstrakurikuler" required>
+    </div><br>
+
+    <!-- Alasan Mendaftar -->
+    <div class="container">
+        <label for="alasan_mendaftar">Alasan Menjadi Pengurus MPK:</label>
+        <input type="text" placeholder="Masukkan alasan mendaftar" required>
+    </div><br>
+
+    <!-- Riwayat Penyakit -->
+    <div class="container">
+        <label for="riwayatpenyakit">Riwayat Penyakit:</label>
+        <input type="text" placeholder="Masukkan riwayat penyakit" required>
+    </div><br>
+
+    <!-- Pemberitahuan -->
+    <p>
+        *) NB : Jika sudah mengikuti satu Organisasi dimohon untuk tidak mengikuti Organisasi lainnya.<br>
+        **) CP : 1. Valen : 08xxxxxxxx (WA) 2. Daffa : 08xxxxxxxx (WA)</p>
+
+    <!-- ...existing code... -->
+
+<!-- Input Foto-->
+<div class="photo">
+    <label for="upfile">Foto Peserta:</label>
+    <input type="file" id="upfile" required onchange="previewImage()">
+    <br>
+    <img id="preview" src="#" alt="Preview Foto" style="display:none; max-width:150px; margin-top:10px;">
+</div><br>
+
+<!-- Keterangan Tempat Tanggal -->
+<div class="highlight">
+    Semarang, <input type="date" style="border: none;" required>
+</div>
+
+<!-- Mengetahui -->
+<div class="equation">
+    <label for="mengetahui">Mengetahui:</label>
+    <input type="text" style="border: none;" placeholder="Masukkan nama orang tua" required>
+    <input type="text" style="border: none;" placeholder="Masukkan nama peserta" required>
+</div>
+<button type="submit">Kirim</button>
+</form>
+
+<script>
+function previewImage() {
+    const fileInput = document.getElementById('upfile');
+    const preview = document.getElementById('preview');
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        preview.src = '';
+        preview.style.display = 'none';
+    }
+}
+
+function clearPreview() {
+    const preview = document.getElementById('preview');
+    preview.src = '';
+    preview.style.display = 'none';
+}
+
+function resetForm() {
+    document.getElementById('formPendaftaran').reset();
+    clearPreview();
+}
+
+// Validasi form tanpa addEventListener
+function validateForm() {
+    const form = document.getElementById('formPendaftaran');
+    const requiredInputs = form.querySelectorAll('input[required], select[required]');
+    for (let input of requiredInputs) {
+        if (!input.value) {
+            alert('Semua kolom wajib diisi!');
+            return false;
+        }
+    }
+    return true;
+}
+</script>
+</body>
+</html>
